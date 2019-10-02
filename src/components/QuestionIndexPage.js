@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import '../styles/QuestionIndexPage.css';
 import questionData from './questionData';
-import DeleteButton from './DeleteButton';
+// import DeleteButton from './DeleteButton';
 
 class QuestionIndexPage extends Component {
     constructor(props) {
@@ -11,10 +11,6 @@ class QuestionIndexPage extends Component {
             questions: [...questionData]
         };
     }
-
-    //a = {};
-    //b = { ...a };
-    //b = Object.assign({}, a);
     deleteQuestion(id) {
         console.log('id: ', id);
         console.log('this: ', this);

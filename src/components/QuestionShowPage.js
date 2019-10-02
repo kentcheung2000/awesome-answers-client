@@ -12,10 +12,22 @@ class QuestionShowPage extends Component {
         this.state = {
             question: { ...oneQuestionData }
         };
+        this.deleteAnswer = this.deleteAnswer.bind(this);
     }
     deleteQuestion() {
         this.setState({
             question: null
+        });
+    }
+    deleteAnswer(answerId) {
+        // console.log('this: ', this);
+        this.setState((state) => {
+            return {
+                question: {
+                    ...state.question,
+                    answers: state.question.answers.filter((answer) => answer.id !== answerId)
+                }
+            };
         });
     }
     render() {
@@ -38,7 +50,7 @@ class QuestionShowPage extends Component {
                     {...this.state.question}
                 />
                 <DeleteButton onDeleteClick={() => this.deleteQuestion()} />
-                <AnswerList answers={this.state.question.answers} />
+                <AnswerList onAnswerDelete={this.deleteAnswer} answers={this.state.question.answers} />
 
                 {/* <AnswerDetails body="Red." author={{ full_name: "Michael Owen" }} created_at={new Date()} /> */}
             </div>

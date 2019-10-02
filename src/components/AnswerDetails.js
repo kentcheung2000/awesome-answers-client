@@ -11,6 +11,9 @@ function AnswerDetails(props) {
         {props.body} <br />
         <ShowAttribution author={props.author_fullname} created_at={props.created_at} />
       </p>
+      <button className="ui right floated red button" onClick={() => props.onDeleteClick(props.id)}>
+        Delete
+			</button>
     </div>
   );
 }
