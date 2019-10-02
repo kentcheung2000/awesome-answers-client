@@ -12,6 +12,9 @@ class QuestionIndexPage extends Component {
         };
     }
 
+    //a = {};
+    //b = { ...a };
+    //b = Object.assign({}, a);
     deleteQuestion(id) {
         console.log('id: ', id);
         console.log('this: ', this);
@@ -23,16 +26,14 @@ class QuestionIndexPage extends Component {
         // this.setState({
         // 	questions: this.state.questions.filter((q) => q.id !== id)
         // });
-
         // You can also setState by giving it a callback as first argument
         // that receives the current state and props as arguments.
-        // It must return an object that will be merged with the state 
+        // It must return an object that will be merged with the state
         this.setState((state, props) => {
             return {
                 questions: state.questions.filter((q) => q.id !== id)
             };
         });
-
     }
     render() {
         return (
@@ -46,7 +47,13 @@ class QuestionIndexPage extends Component {
                                 <br />
                                 <small>Seen {question.view_count} time(s)</small>
                                 <small>Created at: {new Date(question.created_at).toLocaleDateString()}</small>
-                                <DeleteButton onDeleteClick={() => this.deleteQuestion(question.id)} />
+                                <button
+                                    className="ui right floated red button"
+                                    onClick={() => this.deleteQuestion(question.id)}
+                                >
+                                    Delete
+								</button>
+                                {/* <DeleteButton onDeleteClick={() => this.deleteQuestion(question.id)} /> */}
                             </p>
                             <p>{question.body}</p>
                         </li>
