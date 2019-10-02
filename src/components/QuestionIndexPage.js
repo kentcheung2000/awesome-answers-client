@@ -4,12 +4,18 @@ import questionData from './questionData';
 import '../styles/QuestionIndexPage.css';
 
 class QuestionIndexPage extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            questions: [...questionData]
+        };
+    }
     render() {
         return (
             <main className="QuestionIndexPage">
                 <h1>Questions</h1>
                 <ul>
-                    {questionData.map((question, index) => (
+                    {this.state.questions.map((question, index) => (
                         <li key={index}>
                             <p>
                                 {question.title}
