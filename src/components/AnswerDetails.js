@@ -1,6 +1,6 @@
-import React from "react";
-import ShowAttribution from "./ShowAttribution";
-import "../styles/AnswerDetails.css";
+import React from 'react';
+import ShowAttribution from './ShowAttribution';
+import '../styles/AnswerDetails.css';
 
 // AnswerDetails Component
 function AnswerDetails(props) {
@@ -9,7 +9,7 @@ function AnswerDetails(props) {
       <div className="ui header">Answer Details</div>
       <p>
         {props.body} <br />
-        <ShowAttribution author={props.author.full_name} created_at={props.created_at} />
+        <ShowAttribution author={props.author_fullname} created_at={props.created_at} />
       </p>
     </div>
   );
