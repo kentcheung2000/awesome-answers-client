@@ -1,7 +1,8 @@
-import React from "react";
+import React from 'react';
 
-import QuestionShowPage from "./components/QuestionShowPage";
-import "./App.css";
+import QuestionShowPage from './components/QuestionShowPage';
+import QuestionIndexPage from './components/QuestionIndexPage';
+import './App.css';
 
 const numbers = [1, 2, 3, 4];
 
@@ -10,11 +11,12 @@ function App() {
     <div className="ui container">
       {/* in JSX, self-closing tags must be closed. for example <img> doesn't work */}
       {/* instead <img /> must be used */}
+      <QuestionIndexPage />
       <QuestionShowPage />
       {/* We can use map to generate lists */}
-      {numbers.map(number => (
+      {/* {numbers.map(number => (
         <QuestionShowPage key={number} number={number} />
-      ))}
+      ))} */}
     </div>
   );
 }
